@@ -419,9 +419,9 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
         if self.cfg.initialisation_type == "l-system":
             raise Exception("L-System to be added")
 
-            l_systems_mesh = plant_type.generate_l_system_mesh()
+            l_systems_mesh_path = plant_type.generate_l_system_mesh()
 
-            self.cfg.opacity_init = 0.7
+            self.cfg.geometry_convert_from = l_systems_mesh_path
 
         # Initialise using a defined checkpoint
         if self.cfg.initialisation_type == "checkpoint":
@@ -470,8 +470,10 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
 
                     mesh = o3d.io.read_triangle_mesh(self.cfg.geometry_convert_from)
 
+                    self.cfg.opacity_init = 0.7
+
                     # Sample point cloud from mesh
-                    point_cloud = mesh.sample_points_uniformly(number_of_points=self.cfg.number_of_points_to_sample)
+                    point_cloud = mesh.sample_points_uniformly(number_of_points=self.cfg.num_downsample_points)
 
                 # Otherwise, load in point cloud
                 else:

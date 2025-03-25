@@ -17,7 +17,7 @@ def calculate_erosion_kernal(radius):
     erode_kernal_size = 7
     if radius < 2.0:
         erode_kernal_size = 3
-    elif radius < 4.0:
+    elif radius < 5.0:
         erode_kernal_size = 5
 
     return erode_kernal_size

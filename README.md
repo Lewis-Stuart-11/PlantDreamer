@@ -1,13 +1,12 @@
-TODO: 
-Synthetic Meshes
-
 # PlantDreamer (Under Construction)
 
-<p align="center">
-  <img src="assets/bean.gif" width="33%">
-  <img src="assets/kale.gif" width="33%">
-  <img src="assets/mint.gif" width="33%">
-</p>
+<div style="margin-left:10%">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDcwZDFnMmZ4ZWZpandxbXE1enhmcTdrNDZ3ZTd1MW1mdDF4cm5qeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oeVGNAQiXR4KkGe0DZ/giphy.gif" width="40%">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXE3aW42Y21jaHY1MXZkdnoyOGk0ZGcxZHllMXhoejhsaXVsanNucCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kKwMwfFkEmZHXZr5aP/giphy.gif" width="40%">
+</div>
+<div style="margin-left:30%">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3NrbmZybWpjZXRlNTdscXNmamVrcG5zZ2lsNzI1bHNwcGp2YXRqcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Tnz4f6MHjG6ylsdlKi/giphy.gif" width="40%">
+</div>
 
 Generation of 3D plant models is difficult, with many popular text-to-3D models failing to capture the intricate geometry and texture of real plant species. PlantDreamer is new framework that can generate 3D plants based either on a synthetic L-System mesh, or a real plant point cloud. We currently support generation of bean, kale and mint plants. 
 
@@ -69,7 +68,7 @@ This dataset has the following structure:
 |   |   +-- Data  
 |   |   |   +-- 3DGS # Point cloud reconstructed using 3DGS (high quality)
 |   |   |   +-- MVS # Point cloud reconstructed using MVS (medium quality)
-|   |   |   +-- 3DGS # Point cloud reconstructed using SfM (low quality)
+|   |   |   +-- SfM # Point cloud reconstructed using SfM (low quality)
 |   |   |   +-- Synthetic Mesh (L-System mesh)   
 |   |   +-- PlantDreamer 
 |   |   |   +-- 3DGS (standard 3D plant from real point cloud)
@@ -116,7 +115,7 @@ To add a new species, add a new 'PlantSpecies' subclass in 'plant_handler.py' an
 
 ### LoRA Training
 
-To train a new LoRA, we recommend using [KoyaSS](https://github.com/bmaltais/kohya_ss) to perform this operation. This repo has tutorials that you can follow to training a LoRA for yourself. Make sure to train this for the 'stable-diffusion-2-1-base' model (unless you decide to change the diffusion model). 
+To train a new LoRA, we recommend using [KoyaSS](https://github.com/bmaltais/kohya_ss) to perform this operation. This repo has tutorials that you can follow to training a LoRA for yourself. Make sure to train this for the *stable-diffusion-2-1-base* model (unless you decide to change the diffusion model). 
 
 A dataset is required in order to train the LoRA. This dataset should consist of images (with filenames starting 1 onwards) with matching text files which contain the description for the plant (with filenames that match the images, with a txt extension rather than the extension of the image). We recommend using around 20-30 images of each plant species from a range of different camera angles over a broad range of different plant morphologies. 
 
@@ -129,8 +128,6 @@ To generate a new L-System grammar for your species, we recommend looking at the
 Once you have created a new plant L-System, add this function to the factory function at the bottom of the 'l_systems.py' file. Make sure to set the string identifier as **your dedicated species name**
 
 ## Citation
-
-TO BE ADDED
 
 ```
 
