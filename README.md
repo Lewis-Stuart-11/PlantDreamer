@@ -1,12 +1,12 @@
 # PlantDreamer (Under Construction)
 
-<div style="text-align:center">
+<p align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDcwZDFnMmZ4ZWZpandxbXE1enhmcTdrNDZ3ZTd1MW1mdDF4cm5qeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oeVGNAQiXR4KkGe0DZ/giphy.gif" width="40%">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXE3aW42Y21jaHY1MXZkdnoyOGk0ZGcxZHllMXhoejhsaXVsanNucCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kKwMwfFkEmZHXZr5aP/giphy.gif" width="40%">
-</div>
-<div style="text-align:center">
+</p>
+<p align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3NrbmZybWpjZXRlNTdscXNmamVrcG5zZ2lsNzI1bHNwcGp2YXRqcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Tnz4f6MHjG6ylsdlKi/giphy.gif" width="45%">
-</div>
+</p>
 
 Generation of 3D plant models is difficult, with many popular text-to-3D models failing to capture the intricate geometry and texture of real plant species. PlantDreamer is new framework that can generate 3D plants based either on a synthetic L-System mesh, or a real plant point cloud. We currently support generation of bean, kale and mint plants. 
 
