@@ -2,7 +2,7 @@ import os
 
 #from abc import ABC, abstractmethod
 
-from .l_systems import get_l_system
+from .l_systems_handler import get_l_system
 
 class PlantType():
     def __init__(self, plant_species):
