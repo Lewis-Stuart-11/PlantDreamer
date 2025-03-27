@@ -12,11 +12,12 @@ Generation of 3D plant models is difficult, with many popular text-to-3D models 
 
 Full explanation of this process can be found on our **[paper]()** .
 
-Credit to the following repositories that were used as part of this codebase: [GaussianDreamer](https://github.com/hustvl/GaussianDreamer) and the Gaussain Dreamer [threestudio extension](https://github.com/cxh0519/threestudio-gaussiandreamer).
+Credit to the following repositories that were used as part of this codebase: [GaussianDreamer](https://github.com/hustvl/GaussianDreamer) and the GaussainDreamer [threestudio extension](https://github.com/cxh0519/threestudio-gaussiandreamer).
 
 ## Installation
 
-First, you will need to install threestudio, an advanced framework for 3D object generation. Follow the tutorial on the Threestudio. This project has been tested on Threestudio version **0.2.3**.
+### ThreeStudio Custom Extension
+First, you will need to install Threestudio, an advanced framework for 3D object generation. Follow the tutorial on [ThreeStudio repository](https://github.com/threestudio-project/threestudio). This project has been tested on Threestudio version **0.2.3**.
 
 Once installed successfully, navigate inside the Threestudio directory using the console, and enter the following:
 
@@ -35,6 +36,12 @@ pip install bpy
 ```
 
 This installs PlantDreamer into ThreeStudio as a custom extension.
+
+### Blender L-Systems 
+
+If you want to run the L-Systems initialisation, you need to ensure that Blender is installed and added to you system path variable. We recommend using Blender **4.3**, but others should work.
+
+In addition, the [Blender_L-Systems](https://github.com/krljg/lsystem) framework must be correctly installed as an add-on in your blender application. Please follow the steps on the native repository to correctly install this.
 
 ## How to Run
 
@@ -119,13 +126,13 @@ To train a new LoRA, we recommend using [KoyaSS](https://github.com/bmaltais/koh
 
 A dataset is required in order to train the LoRA. This dataset should consist of images (with filenames starting 1 onwards) with matching text files which contain the description for the plant (with filenames that match the images, with a txt extension rather than the extension of the image). We recommend using around 20-30 images of each plant species from a range of different camera angles over a broad range of different plant morphologies. 
 
-Once the LoRA is trained, place it into the LoRA directory along with the other trained LoRAs, with the **directory as the name of your dedicated speciees name**
+Once the LoRA is trained, place it into the LoRA directory along with the other trained LoRAs, with the **directory as the name of your dedicated species name**
 
 ### L-System
 
 To generate a new L-System grammar for your species, we recommend looking at the documentation on the [Blender_L-Systems](https://github.com/krljg/lsystem) repo. The 'l_systems.py' script contains examples of how the bean, mint and kale L-Systems were constructed.
 
-Once you have created a new plant L-System, add this function to the factory function at the bottom of the 'l_systems.py' file. Make sure to set the string identifier as **your dedicated species name**
+Once you have created a new plant L-System, add the python file to the l_systems directory. Make sure to set the name of the python file as **your dedicated species name**
 
 ## Citation
 
