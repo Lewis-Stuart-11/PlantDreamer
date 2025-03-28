@@ -8,11 +8,11 @@ def select_objects_except_in_collection(exclude_collection):
   for obj in bpy.data.objects:
     if exclude_collection in [c.name.lower().strip() for c in obj.users_collection]:
       obj.select_set(False)
-      
-    """for exclude_str in exclude_list:
-      if exclude_str in obj.name:
-        obj.select_set(False)
-        break"""
+    else:
+      try:
+        obj.select_set(True)
+      except Exception:
+        pass
       
 def deselect_all_objects():
   """Selects all objects except those with names that exactly match strings in the exclude_list."""
