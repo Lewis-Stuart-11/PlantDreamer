@@ -1,22 +1,12 @@
-import lsystem.exec
 import bpy
+import lsystem.exec
 import random
+import sys
+import os
+
 from datetime import datetime
 
-# Clear existing objects
-def clearObjects():
-    bpy.ops.object.select_all(action='DESELECT')
-    bpy.ops.object.select_by_type(type='MESH')
-    bpy.ops.object.delete()
-
-def randnum(char, min=1, max=5):
-    r = random.randint(min, max)    
-    ret = ""
-    for i in range(0, r):
-        ret = ret + char
-    return ret
-
-def kale_l_system():
+def generate_lsystem():
     exec = lsystem.exec.Exec()
     
     exec.define("a0", "85")
@@ -46,7 +36,15 @@ def kale_l_system():
         
     # Rename lsystem
     lSystem = bpy.context.object
-    lSystem.name = "kale"
+    lSystem.name = "LSystem_Plant"
+
+def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.append(script_dir)
+
+    from scripts.generate_mesh import generate_mesh
+
+    generate_mesh(generate_lsystem, exclude_objects_with_collection="lsystem")
 
 if __name__ == "__main__":
-    kale_l_system()
+    main()

@@ -1,13 +1,10 @@
-import lsystem.exec
 import bpy
+import sys
+import os
+import lsystem.exec
 import random
-from datetime import datetime
 
-# Clear existing objects
-def clearObjects():
-    bpy.ops.object.select_all(action='DESELECT')
-    bpy.ops.object.select_by_type(type='MESH')
-    bpy.ops.object.delete()
+from datetime import datetime
 
 def randnum(char, min=1, max=5):
     r = random.randint(min, max)    
@@ -16,7 +13,7 @@ def randnum(char, min=1, max=5):
         ret = ret + char
     return ret
 
-def bean_l_system():
+def generate_lsystem():
     exec = lsystem.exec.Exec()
 
     random.seed(datetime.now().timestamp())
@@ -40,6 +37,8 @@ def bean_l_system():
     
     exec.add_rule("X", "~(leaf)")
     exec.add_rule("Y", "~(small_leaf)")
+
+    # Execute the L-system
     
     exec.exec(seed=datetime.now().timestamp(), 
         min_iterations=7, 
@@ -48,9 +47,18 @@ def bean_l_system():
         radius=0.3,
         animate=False)
 
+    # Rename lsystem
     lSystem = bpy.context.object
-    lSystem.name = "bean"
+    lSystem.name = "LSystem_Plant"
+    
 
+def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.append(script_dir)
+
+    from scripts.generate_mesh import generate_mesh
+    
+    generate_mesh(generate_lsystem, exclude_objects_with_collection="lsystem")
 
 if __name__ == "__main__":
-    bean_l_system()
+    main()

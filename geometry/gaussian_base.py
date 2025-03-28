@@ -417,9 +417,8 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
         
         # Initialise using L-Systems
         if self.cfg.initialisation_type == "l-system":
-            raise Exception("L-System to be added")
 
-            l_systems_mesh_path = plant_type.generate_l_system_mesh()
+            l_systems_mesh_path = self.plant_type.generate_l_system_mesh()
 
             self.cfg.geometry_convert_from = l_systems_mesh_path
 
@@ -470,6 +469,7 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
 
                     mesh = o3d.io.read_triangle_mesh(self.cfg.geometry_convert_from)
 
+                    # Set higher mesh surface density
                     self.cfg.opacity_init = 0.7
 
                     # Sample point cloud from mesh
@@ -489,7 +489,7 @@ class GaussianBaseModel(BaseGeometry, GaussianIO):
 
                 # Downsample point cloud 
                 point_cloud = self.downsample_pointcloud(point_cloud, num_downsample_points=self.cfg.num_downsample_points)
-                
+            
                 points = np.asarray(point_cloud.points)
 
                 # Coloured Point Cloud Colour

@@ -20,8 +20,9 @@ class PlantType():
         self.lora_name = os.path.join(self.plant_species, "pytorch_lora_weights.safetensors")
 
     # Method that will be overwritten that generates an L-System mesh
-    def get_l_systems_mesh(self):
+    def generate_l_system_mesh(self):
         self.l_system_path = get_l_system(self.plant_species) 
+        return self.l_system_path
 
 class Bean(PlantType):
     def __init__(self):
@@ -44,7 +45,7 @@ def get_plant_type(plant_type_str):
     plant_type_str = plant_type_str.lower().strip()
 
     """ 
-        Add your string to species condiution here
+        Add your string to species condition here
     """ 
     if plant_type_str == "bean":
         return Bean()
