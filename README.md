@@ -33,6 +33,8 @@ pip install open3d
 pip install diffusers==0.30.3
 pip install transformers==4.44.2
 pip install bpy
+pip install plyfile
+pip install peft 
 ```
 
 This installs PlantDreamer into ThreeStudio as a custom extension.
