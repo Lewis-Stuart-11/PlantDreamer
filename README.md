@@ -143,5 +143,13 @@ Once you have created a new plant L-System, add this Blender project file to the
 ## Citation
 
 ```
-
+@misc{hartley2025plantdreamerachievingrealistic3d,
+      title={PlantDreamer: Achieving Realistic 3D Plant Models with Diffusion-Guided Gaussian Splatting}, 
+      author={Zane K J Hartley and Lewis A G Stuart and Andrew P French and Michael P Pound},
+      year={2025},
+      eprint={2505.15528},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.15528}, 
+}
 ```
