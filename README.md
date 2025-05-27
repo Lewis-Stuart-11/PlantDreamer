@@ -10,7 +10,7 @@
 
 Generation of 3D plant models is difficult, with many popular text-to-3D models failing to capture the intricate geometry and texture of real plant species. PlantDreamer is new framework that can generate 3D plants based either on a synthetic L-System mesh, or a real plant point cloud. We currently support generation of *bean*, *kale* and *mint* plants. 
 
-Full explanation of this process can be found on our **[paper]()** .
+Full explanation of this process can be found on our **[paper](https://arxiv.org/abs/2505.15528)**. Supporting material can be acessed via our **[dataset](https://plantimages.nottingham.ac.uk/datasets.html#plantdreamer)**.
 
 Credit to the following repositories that were used as part of this codebase: [GaussianDreamer](https://github.com/hustvl/GaussianDreamer) and the GaussainDreamer [threestudio extension](https://github.com/cxh0519/threestudio-gaussiandreamer).
 
